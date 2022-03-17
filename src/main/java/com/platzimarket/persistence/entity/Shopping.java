@@ -1,12 +1,16 @@
 package com.platzimarket.persistence.entity;
 
-import lombok.Data;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "shopping")
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class Shopping {
 
     @Id
