@@ -1,21 +1,19 @@
 package com.platzimarket.persistence.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "shopping_product")
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class ShoppingProduct {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_shopping")
-    private Long idShopping;
-
-    @Column(name = "id_product")
-    private Long idProduct;
+    @EmbeddedId
+    private ShoppingProductPK id;
 
     @Column(name = "count_product")
     private Long countProduct;
