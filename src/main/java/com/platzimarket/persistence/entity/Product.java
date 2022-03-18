@@ -23,6 +23,10 @@ public class Product {
     @Column(name = "id_category")
     private Long idCategory;
 
+    @ManyToOne
+    @JoinColumn(name = "id_category", insertable = false, updatable = false)
+    private Category category;
+
     private String barcode;
     private String name;
     private Long stock;

@@ -3,7 +3,7 @@ package com.platzimarket.persistence.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "category")
@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Category implements Serializable {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +21,8 @@ public class Category implements Serializable {
     private String description;
 
     private Boolean state;
+
+    @OneToMany(mappedBy = "category")
+    @ToString.Exclude
+    private List<Product> products;
 }

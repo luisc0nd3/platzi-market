@@ -4,6 +4,7 @@ package com.platzimarket.persistence.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -23,4 +24,8 @@ public class Client {
     private String phone;
     private String email;
     private String addreess;
+
+    @OneToMany(mappedBy = "client")
+    @ToString.Exclude
+    private List<Shopping> shoppings;
 }
