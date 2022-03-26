@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Client {
+public class ClientEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,5 +27,5 @@ public class Client {
 
     @OneToMany(mappedBy = "client")
     @ToString.Exclude
-    private List<Shopping> shoppings;
+    private List<ShoppingEntity> shoppings;
 }

@@ -1,7 +1,7 @@
 package com.platzimarket.persistence;
 
 import com.platzimarket.persistence.crud.ProductJpaRepository;
-import com.platzimarket.persistence.entity.Product;
+import com.platzimarket.persistence.entity.ProductEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,23 +12,23 @@ public class ProductJpaRepositoryImpl {
 
   private ProductJpaRepository productDao;
 
-  public List<Product> findAll() {
+  public List<ProductEntity> findAll() {
     return productDao.findAll();
   }
 
-  public List<Product> getCategoryByIdCategory(long idCategory) {
+  public List<ProductEntity> getCategoryByIdCategory(long idCategory) {
     return productDao.findByIdCategoryOrderByNameDesc(idCategory);
   }
 
-  public Optional<List<Product>> getMostSelledProducts(long stock, boolean state) {
+  public Optional<List<ProductEntity>> getMostSelledProducts(long stock, boolean state) {
     return productDao.findByStockLessThanAndState(stock, state);
   }
 
-  public Optional<Product> getProductById(long idProduct) {
+  public Optional<ProductEntity> getProductById(long idProduct) {
     return productDao.findById(idProduct);
   }
 
-  public Product save(Product product) {
+  public ProductEntity save(ProductEntity product) {
     return productDao.save(product);
   }
 

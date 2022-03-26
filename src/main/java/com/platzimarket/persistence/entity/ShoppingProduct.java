@@ -23,9 +23,9 @@ public class ShoppingProduct {
 
     @ManyToOne
     @JoinColumn(name = "id_shopping", insertable = false, updatable = false)
-    private Shopping shopping;
+    private ShoppingEntity shopping;
 
     @ManyToOne
     @JoinColumn(name = "id_product", insertable = false, updatable = false)
-    private  Product product;
+    private ProductEntity product;
 }

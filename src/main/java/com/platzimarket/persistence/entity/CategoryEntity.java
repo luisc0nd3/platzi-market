@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Category {
+public class CategoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,5 +24,5 @@ public class Category {
 
     @OneToMany(mappedBy = "category")
     @ToString.Exclude
-    private List<Product> products;
+    private List<ProductEntity> products;
 }

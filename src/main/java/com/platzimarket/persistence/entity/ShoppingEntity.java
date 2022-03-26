@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Shopping {
+public class ShoppingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,7 @@ public class Shopping {
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
-    private Client client;
+    private ClientEntity client;
 
     @OneToMany(mappedBy = "product")
     private List<ShoppingProduct> products;

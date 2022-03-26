@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id_category", insertable = false, updatable = false)
-    private Category category;
+    private CategoryEntity category;
 
     private String barcode;
     private String name;
