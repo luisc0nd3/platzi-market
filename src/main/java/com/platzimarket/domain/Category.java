@@ -10,6 +10,6 @@ import lombok.ToString;
 public class Category {
 
     private int categoryId;
-    private String category;
+    private String paramCategory;
     private boolean active;
 }
