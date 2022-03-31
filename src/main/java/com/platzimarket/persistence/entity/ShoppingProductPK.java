@@ -3,7 +3,8 @@ package com.platzimarket.persistence.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
@@ -11,9 +12,9 @@ import java.io.Serializable;
 @Setter
 public class ShoppingProductPK implements Serializable {
 
-    @Column(name = "id_shopping")
-    private Long idShopping;
+  @Column(name = "id_shopping")
+  private Long idShopping;
 
-    @Column(name = "id_product")
-    private Long idProduct;
+  @Column(name = "id_product")
+  private Long idProduct;
 }

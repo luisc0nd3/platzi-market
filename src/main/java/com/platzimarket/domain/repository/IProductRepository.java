@@ -7,15 +7,15 @@ import java.util.Optional;
 
 public interface IProductRepository {
 
-    List<Product> getAll();
+  List<Product> getAll();
 
-    Optional<List<Product>> getByCategory(int categoryId);
+  Optional<List<Product>> getByCategory(int categoryId);
 
-    Optional<List<Product>> getScarseProducts(int quantity);
+  Optional<List<Product>> getScarseProducts(int quantity);
 
-    Optional<Product> getProduct(int productId);
+  Optional<Product> getProduct(int productId);
 
-    Product save(Product product);
+  Product save(Product product);
 
-    void delete(int productId);
+  void delete(int productId);
 }

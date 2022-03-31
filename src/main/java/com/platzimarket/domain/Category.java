@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class Category {
 
-    private int categoryId;
-    private String paramCategory;
-    private boolean active;
+  private int categoryId;
+  private String paramCategory;
+  private boolean active;
 }

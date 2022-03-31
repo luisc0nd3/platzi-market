@@ -1,6 +1,9 @@
 package com.platzimarket.persistence.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,16 +16,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_category")
-    private Long idCategory;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id_category")
+  private Long idCategory;
 
-    private String description;
+  private String description;
 
-    private Boolean state;
+  private Boolean state;
 
-    @OneToMany(mappedBy = "category")
-    @ToString.Exclude
-    private List<ProductEntity> products;
+  @OneToMany(mappedBy = "categoryEntity")
+  @ToString.Exclude
+  private List<ProductEntity> products;
 }

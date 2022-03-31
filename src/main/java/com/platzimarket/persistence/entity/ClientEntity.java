@@ -1,7 +1,9 @@
 package com.platzimarket.persistence.entity;
 
-
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,18 +16,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClientEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cliente")
-    private Long idCliente;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id_cliente")
+  private Long idCliente;
 
-    private String name;
-    private String surname;
-    private String phone;
-    private String email;
-    private String addreess;
+  private String name;
+  private String surname;
+  private String phone;
+  private String email;
+  private String addreess;
 
-    @OneToMany(mappedBy = "client")
-    @ToString.Exclude
-    private List<ShoppingEntity> shoppings;
+  @OneToMany(mappedBy = "client")
+  @ToString.Exclude
+  private List<ShoppingEntity> shoppings;
 }
