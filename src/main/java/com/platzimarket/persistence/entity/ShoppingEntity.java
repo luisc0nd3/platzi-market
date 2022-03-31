@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "shopping")
@@ -11,7 +12,7 @@ import java.util.Date;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Shopping {
+public class ShoppingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +30,11 @@ public class Shopping {
 
     private String comment;
     private String state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private ClientEntity client;
+
+    @OneToMany(mappedBy = "product")
+    private List<ShoppingProduct> products;
 }

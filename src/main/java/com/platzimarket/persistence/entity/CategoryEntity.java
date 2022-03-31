@@ -1,30 +1,28 @@
 package com.platzimarket.persistence.entity;
 
 import lombok.*;
+
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
-@Table(name = "product")
+@Table(name = "category")
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Product {
+public class CategoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_product")
-    private Long idProduct;
-
-    @Column(name = "sale_price")
-    private BigDecimal salePrice;
-
     @Column(name = "id_category")
     private Long idCategory;
 
-    private String barcode;
-    private String name;
-    private Long stock;
+    private String description;
+
     private Boolean state;
+
+    @OneToMany(mappedBy = "category")
+    @ToString.Exclude
+    private List<ProductEntity> products;
 }

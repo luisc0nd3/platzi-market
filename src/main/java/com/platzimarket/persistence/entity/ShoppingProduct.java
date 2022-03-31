@@ -20,4 +20,12 @@ public class ShoppingProduct {
 
     private Long total;
     private Boolean state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_shopping", insertable = false, updatable = false)
+    private ShoppingEntity shopping;
+
+    @ManyToOne
+    @JoinColumn(name = "id_product", insertable = false, updatable = false)
+    private ProductEntity product;
 }
