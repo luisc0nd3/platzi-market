@@ -1,6 +1,9 @@
 package com.platzimarket.persistence.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -12,20 +15,19 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 public class ShoppingProduct {
 
-    @EmbeddedId
-    private ShoppingProductPK id;
+  @EmbeddedId private ShoppingProductPK id;
 
-    @Column(name = "count_product")
-    private Long countProduct;
+  @Column(name = "count_product")
+  private Long countProduct;
 
-    private Long total;
-    private Boolean state;
+  private Long total;
+  private Boolean state;
 
-    @ManyToOne
-    @JoinColumn(name = "id_shopping", insertable = false, updatable = false)
-    private ShoppingEntity shopping;
+  @ManyToOne
+  @JoinColumn(name = "id_shopping", insertable = false, updatable = false)
+  private ShoppingEntity shopping;
 
-    @ManyToOne
-    @JoinColumn(name = "id_product", insertable = false, updatable = false)
-    private ProductEntity product;
+  @ManyToOne
+  @JoinColumn(name = "id_product", insertable = false, updatable = false)
+  private ProductEntity product;
 }
