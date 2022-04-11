@@ -12,9 +12,10 @@ public interface IProductRepository {
 
   Optional<List<Product>> getScarseProducts(int quantity);
 
-  Optional<Product> getProduct(int productId);
+  Optional<Product> getProduct(long productId);
 
   Product save(Product product);
 
-  void delete(int productId);
+  void delete(long productId);
+
 }
