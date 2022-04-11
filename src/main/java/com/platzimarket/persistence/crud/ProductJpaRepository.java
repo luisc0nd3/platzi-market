@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ProductJpaRepository extends JpaRepository<ProductEntity, Long> {
 
-  List<ProductEntity> findByIdCategoryOrderByNameAsc(long idCategory);
+  List<ProductEntity> findByIdCategoryOrderByNameDesc(long idCategory);
 
   Optional<List<ProductEntity>> findByStockLessThanAndState(long stock, boolean state);
 }
