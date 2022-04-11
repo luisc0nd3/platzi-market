@@ -14,11 +14,9 @@ import java.util.Optional;
 @Repository
 public class ProductJpaRepositoryImpl implements IProductRepository {
 
-  @Autowired
-  private ProductJpaRepository productDao;
+  @Autowired private ProductJpaRepository productDao;
 
-  @Autowired
-  private ProductMapper mapper;
+  @Autowired private ProductMapper mapper;
 
   @Override
   public List<Product> getAll() {
