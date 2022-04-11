@@ -2,7 +2,7 @@ package com.platzimarket.persistence;
 
 import com.platzimarket.domain.Product;
 import com.platzimarket.domain.repository.IProductRepository;
-import com.platzimarket.persistence.crud.ProductJpaRepository;
+import com.platzimarket.persistence.crud.ProductoCrudRepository;
 import com.platzimarket.persistence.entity.ProductEntity;
 import com.platzimarket.persistence.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public class ProductJpaRepositoryImpl implements IProductRepository {
 
-  @Autowired private ProductJpaRepository productDao;
+  @Autowired private ProductoCrudRepository productDao;
 
   @Autowired private ProductMapper mapper;
 

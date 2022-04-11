@@ -1,7 +1,4 @@
-/**
- * controller's url http://localhost:8081/platzi-market/products
- */
-
+/** controller's url http://localhost:8081/platzi-market/products */
 package com.platzimarket.web.controller;
 
 import com.platzimarket.domain.Product;

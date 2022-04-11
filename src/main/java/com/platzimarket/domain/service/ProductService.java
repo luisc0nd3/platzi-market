@@ -11,8 +11,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-  @Autowired
-  IProductRepository productJpaRepositoryImpl;
+  @Autowired IProductRepository productJpaRepositoryImpl;
 
   public List<Product> getAll() {
     return productJpaRepositoryImpl.getAll();
