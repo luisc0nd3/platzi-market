@@ -26,14 +26,14 @@ public class ProductJpaRepositoryImpl implements IProductRepository {
 
   @Override
   public Optional<List<Product>> getByCategory(int categoryId) {
-    List<ProductEntity> productEntityList = productDao.findByIdCategoryOrderByNameAsc(categoryId);
+    List<ProductEntity> productEntityList = productDao.findByIdCategoryOrderByNameDesc(categoryId);
     return Optional.of(mapper.toProducts(productEntityList));
   }
 
   @Override
   public Optional<List<Product>> getScarseProducts(int quantity) {
     Optional<List<ProductEntity>> productEntityList =
-            productDao.findByStockLessThanAndState(quantity, true);
+        productDao.findByStockLessThanAndState(quantity, true);
     return productEntityList.map(p -> mapper.toProducts(p));
   }
 

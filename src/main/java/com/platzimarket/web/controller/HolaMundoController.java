@@ -1,3 +1,4 @@
+/** controller's url http://localhost:8081/platzi-market/greetings/hi */
 package com.platzimarket.web.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
