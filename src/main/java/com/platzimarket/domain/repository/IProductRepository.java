@@ -1,13 +1,11 @@
 package com.platzimarket.domain.repository;
 
 import com.platzimarket.domain.Product;
-import com.platzimarket.persistence.entity.ProductEntity;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IProductRepository {
-
   List<Product> getAll();
 
   Optional<List<Product>> getByCategory(int categoryId);
