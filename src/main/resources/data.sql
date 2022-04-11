@@ -1,11 +1,16 @@
+-- category's
 insert into category (id_category,description,state) values (1,'Abarrotes', true);
 insert into category (id_category,description,state) values (2,'Construcción', true);
 insert into category (id_category,description,state) values (3,'Oficina', true);
 insert into category (id_category,description,state) values (4,'Jardin', false);
 insert into category (id_category,description,state) values (5,'Salchichoneria', true);
 
+-- clients
 insert into client (id_cliente, name, surname, phone, email, addreess) values
 (1, 'Luis', 'Conde', '5233837889', 'luis.conde@gmail.com', '221b baker street');
+
+insert into client (id_cliente, name, surname, phone, email, addreess) values
+(2, 'Alice', 'Sanchez', '893932326736', 'alice.sanchez@gmail.com', '221a baker street');
 
 -- products
 insert into product (id_product, name, id_category, barcode, sale_price, stock, state) values (1, 'Wasabi Powder', 1, 'FR80 5309 9223 02GW TOXI WNZH D37', 8.53, 1, true);
@@ -140,12 +145,14 @@ insert into product (id_product, name, id_category, barcode, sale_price, stock, 
 insert into product (id_product, name, id_category, barcode, sale_price, stock, state) values (129, 'Steel', 2, 'BG21 OCUL 6061 96RI PNKS PQ', 4.14, 29, true);
 insert into product (id_product, name, id_category, barcode, sale_price, stock, state) values (130, 'Brass', 2, 'EE19 9117 9017 9282 7190', 3.05, 30, false);
 
+-- shoppings
 insert into shopping (id_shopping, id_cliente, sale_date, payment_method, comment, state) values
 (1, 1, NOW(), 1, 'compra de verano', true);
 
 insert into shopping_product(id_shopping, id_product, count_product, total, state)
 values (1, 1, 3, 87, true);
 
+-- cat_payment_method
 CREATE TABLE cat_payment_method (
    id_payment_method BIGINT IDENTITY PRIMARY KEY,
    name VARCHAR(100) NOT NULL,
